@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <body>
+    <script src="{% static 'JS/common.js' %}" type="text/javascript"></script>
+
+    <form action="{% url 'save_to_db' %}" method="post">{% csrf_token %}
+        <table align="center" border="2" width="800">
+            <tr><th>Registration Page</th></tr>
+            <tr><th><input type="text" placeholder="Name" required name="t1"></th></tr>
+            <tr>
+                <th>
+                    <input id="contact" type="number" placeholder="Contact" required name="t2" onblur="validate_contact()">
+                    <span id="s_contact"></span>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input id="email" type="email" placeholder="Email" required name="t3" onblur="validate_email()">
+                    <span id="e_mail"></span>
+                </th>
+            </tr>
+            <tr><th><input type="password" placeholder="Password" required name="t4"></th></tr>
+            <tr><th>
+                <button type="submit" disabled id="b1">Save</button>
+            </th></tr>
+        </table>
+    </form>
+    </body>
+</html>
